@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fuel Efficiency Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>Fuel Efficiency Predictor</h2>
+    <form method="post" action="/predict">
+        <label>Model:</label><br>
+        <input type="text" name="Model" required><br><br>
+        <label>Maker:</label><br>
+        <input type="text" name="Maker" required><br><br>
+        <label>Type:</label><br>
+        <input type="text" name="Type" required><br><br>
+        <label>Fuel:</label><br>
+        <input type="text" name="Fuel" required><br><br>
+        <label>Transmission:</label><br>
+        <input type="text" name="Transmission" required><br><br>
+        <label>Drive:</label><br>
+        <input type="text" name="Drive" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
